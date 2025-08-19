@@ -1,15 +1,24 @@
+# .readthedocs.yaml
 version: 2
 
-sphinx:
-  configuration: source/conf.py
-
-python:
-  install:
-    - requirements: requirements.txt
-
+# 构建环境
 build:
   os: ubuntu-22.04
   tools:
     python: "3.10"
-  commands:
-    - make html
+
+# Python 依赖安装
+python:
+  install:
+    - method: pip
+      path: .
+    - requirements: requirements.txt  # 如果你有 requirements 文件
+    - packages:
+        - myst-parser
+        - sphinx
+        - sphinx-rtd-theme
+
+# 构建命令
+sphinx:
+  configuration: source/conf.py
+  builder: html
