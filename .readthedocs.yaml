@@ -1,11 +1,17 @@
 # .readthedocs.yaml
+# 版本必须是2
 version: 2
 
+# 指定 Sphinx 配置文件路径
 sphinx:
-  configuration: source/conf.py  # 指向你的 conf.py
+  configuration: source/conf.py
 
+# Python 配置
 python:
   version: 3.10
   install:
-    - path: .
+    - path: .   # 安装当前仓库
 
+# 可选：构建的版本信息
+build:
+  image: latest  # 使用最新的 RTD 构建环境
