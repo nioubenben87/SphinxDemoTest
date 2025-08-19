@@ -11,6 +11,4 @@ python:
   install:
     - requirements: requirements.txt  # 安装依赖，如果没有依赖也可以保留空文件
 
-# 构建镜像
-build:
-  image: latest  # 使用官方最新构建镜像
+
